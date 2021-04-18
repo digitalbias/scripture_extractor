@@ -13,3 +13,5 @@ Steps:
 4. Check the `.env` file to make sure it points at where you have the sqlite3 db file and that the output directory is where you want it
 5. `make`
 6. You should be done
+
+If all you are interested in is the markdown files themselves, you can get them [here](https://github.com/digitalbias/scripture_extractor/releases/tag/0.1)
