@@ -1,21 +1,15 @@
-# ScriptureExtract
+# Scripture Extractor
 
-**TODO: Add description**
+Wrote it in a weekend and it's really ugly, but it gets the job done. 
 
-## Installation
+I really just wanted to have some scriptures in a markdown format that I could reference so I found a sqlite3 database out there I could use. This takes the database, pulls out the verses and creates a series of folders. One for the particular volume (like The Old Testament) and then another subfolder for each book in it (i.e. Genesis). It creates a markdown file for each chapter and also creates index files for the volume and books. It scratches my itch for now, but it could really use some better cleanup to make it more efficient and less resource hungry...and more "elixiry"
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `scripture_extract` to your list of dependencies in `mix.exs`:
+## Installation & Running it
 
-```elixir
-def deps do
-  [
-    {:scripture_extract, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/scripture_extract](https://hexdocs.pm/scripture_extract).
-
+Steps: 
+1. Clone the repo
+2. `mix deps.get`
+3. Download the LDS scripture library from https://scriptures.nephi.org/ and run the script that creates the "scripture" view
+4. Check the `.env` file to make sure it points at where you have the sqlite3 db file and that the output directory is where you want it
+5. `make`
+6. You should be done
