@@ -24,3 +24,4 @@ scripture_extract-*.tar
 
 /db
 /output
+.DS_Store
