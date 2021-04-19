@@ -167,7 +167,7 @@ defmodule ScriptureExtract do
   def extract_verse(result) do
     verse_number = get_result_value(:verse_number, result)
     scripture_text = get_result_value(:scripture_text, result)
-    "#{verse_number} #{scripture_text}\n"
+    "#{verse_number} #{scripture_text}\n\n"
   end
 
   defp get_result_value(:book_id, [_, book_id, _, _, _, _, _, _, _]) do
