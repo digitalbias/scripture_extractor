@@ -14,7 +14,7 @@ defmodule ScriptureExtract do
 
   """
   def run do
-    db_location = Application.get_env(:scripture_extract, :db_location)
+    db_location = Application.get_env(:scripture_extract, :db_location, "db")
 
     path = Path.expand("./#{db_location}")
     delete_output_directory()
@@ -24,7 +24,7 @@ defmodule ScriptureExtract do
   end
 
   def delete_output_directory() do
-    output_dir = Application.get_env(:scripture_extract, :output_dir)
+    output_dir = Application.get_env(:scripture_extract, :output_dir, "output")
 
     Path.expand("./#{output_dir}")
     |> File.rm_rf!
