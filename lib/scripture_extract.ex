@@ -122,8 +122,10 @@ defmodule ScriptureExtract do
     book_title = get_result_value(:book_title, result)
 
     subtitle = get_book_subtitle(book_id)
+    volume_title = get_result_value(:volume_title, result)
+    subtag = String.downcase(String.replace(volume_title, " ", "-"), :ascii)
 
-    contents = "# #{book_title}\n"
+    contents = "# #{book_title}\n#scriptures/#{subtag}\n"
     contents = write_book_subtitle(contents, subtitle)
     IO.binwrite(file, contents)
   end
@@ -159,7 +161,10 @@ defmodule ScriptureExtract do
     book_title = get_result_value(:book_title, result)
     chapter_number = get_result_value(:chapter_number, result)
 
-    IO.binwrite(file, "# #{book_title} #{chapter_number}\n\n")
+    volume_title = get_result_value(:volume_title, result)
+    subtag = String.downcase(String.replace(volume_title, " ", "-"), :ascii)
+
+    IO.binwrite(file, "# #{book_title} #{chapter_number}\n#scriptures/#{subtag}\n\n")
   end
 
   def write_chapter_header(_, _, _) do end
@@ -167,7 +172,7 @@ defmodule ScriptureExtract do
   def extract_verse(result) do
     verse_number = get_result_value(:verse_number, result)
     scripture_text = get_result_value(:scripture_text, result)
-    "#{verse_number} #{scripture_text}\n\n"
+    "#{verse_number} #{scripture_text} ^#{verse_number}\n\n"
   end
 
   defp get_result_value(:book_id, [_, book_id, _, _, _, _, _, _, _]) do
