@@ -25,3 +25,4 @@ scripture_extract-*.tar
 /db
 /output
 .DS_Store
+/scripture_extractor.code-workspace
