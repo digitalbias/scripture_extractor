@@ -177,7 +177,8 @@ defmodule ScriptureExtract do
   def extract_verse(result) do
     verse_number = get_result_value(:verse_number, result)
     scripture_text = get_result_value(:scripture_text, result)
-    "#{verse_number} #{scripture_text} ^#{verse_number}\n\n"
+    verse_reference = get_verse_reference(result)
+    "#{verse_number} #{scripture_text} ^#{verse_reference}\n\n"
   end
 
   defp get_result_value(:book_id, [_, book_id, _, _, _, _, _, _, _]) do
@@ -202,5 +203,11 @@ defmodule ScriptureExtract do
 
   defp get_result_value(:scripture_text, [_, _, _, _, _, _, _, _, scripture_text]) do
     scripture_text
+  end
+
+  defp get_verse_reference([_, _, _, _, _, book_title, chapter_number, verse_number, _]) do
+    "#{book_title}chap#{chapter_number}ver#{verse_number}"
+    |> String.replace(" ", "")
+    |> String.downcase(:ascii)
   end
 end
