@@ -16,4 +16,4 @@ Steps:
 5. `make`
 6. You should be done
 
-If all you are interested in is the markdown files themselves, you can get them [here](https://github.com/digitalbias/scripture_extractor/releases/tag/0.2)
+If all you are interested in is the markdown files themselves, you can get them [here](https://github.com/digitalbias/scripture_extractor/releases/tag/0.3)
