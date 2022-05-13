@@ -206,7 +206,7 @@ defmodule ScriptureExtract do
   end
 
   defp get_verse_reference([_, _, _, _, _, book_title, chapter_number, verse_number, _]) do
-    "#{book_title}chap#{chapter_number}ver#{verse_number}"
+    "#{book_title}-#{chapter_number}-#{verse_number}"
     |> String.replace(" ", "")
     |> String.downcase(:ascii)
   end
