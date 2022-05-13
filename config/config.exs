@@ -13,5 +13,3 @@ use Mix.Config
 config :scripture_extract,
   db_location: System.get_env("DB_LOCATION"),
   output_dir: System.get_env("OUTPUT_DIR")
-
-import_config "#{Mix.env()}.exs"
