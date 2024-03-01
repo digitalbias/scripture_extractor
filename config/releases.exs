@@ -1,7 +1,7 @@
 import Config
 
 if Config.config_env() == :dev do
-    DotenvParser.load_file(".env")
+  DotenvParser.load_file(".env")
 end
 
 config :scripture_extract,
