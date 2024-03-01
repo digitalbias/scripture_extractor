@@ -231,7 +231,7 @@ defmodule ScriptureExtract do
 
     previous_link = get_header_chapter_link(verse_data, chapter_number - 1)
     next_link = get_header_chapter_link(verse_data, next_chapter_number)
-    "---\ntags: \n\t- scriptures\n---\n<< #{previous_link} | #{next_link} >>"
+    "---\ntags: \n- scriptures\n---\n<< #{previous_link} | #{next_link} >>"
   end
 
   def get_next_chapter_number(verse_data, book_data) do
