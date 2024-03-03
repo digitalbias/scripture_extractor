@@ -1,6 +1,6 @@
 # Scripture Extractor
 
-Wrote it in a weekend and it's really ugly, but it gets the job done. 
+Wrote it in a weekend and it's really ugly, but it gets the job done.
 
 I really just wanted to have some scriptures in a markdown format that I could reference so I found a sqlite3 database out there I could use. I've been using Obsidian for a while now and wanted a vault where I could study the scriptures and also make comments and create links in a more portable, free form manner than what I have found in other systems.
 
@@ -8,7 +8,7 @@ I really just wanted to have some scriptures in a markdown format that I could r
 
 ## Installation & Running it
 
-Steps: 
+Steps:
 1. Clone the repo
 2. `mix deps.get`
 3. Download the LDS scripture library from https://scriptures.nephi.org/ and run the script that creates the "scripture" view
@@ -16,4 +16,4 @@ Steps:
 5. `make`
 6. You should be done
 
-If all you are interested in is the markdown files themselves, you can get them [here](https://github.com/digitalbias/scripture_extractor/releases/tag/0.4)
+If all you are interested in is the markdown files themselves, you can get them [here](https://github.com/digitalbias/scripture_extractor/releases/tag/0.5)
